@@ -6,12 +6,12 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int n, node;
+	size_t n, node;
 
 	if (!tree)
 		return (0);
 	for (n = 0, node = 1; n <= binary_tree_height(tree); n++)
-		node *= 2;
+		node = node * 2;
 	return (binary_tree_size(tree) + 1 == node);
 }
 
